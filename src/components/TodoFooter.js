@@ -17,10 +17,12 @@ function TodoFooter({todos, onClearCompleted}) {
     const classes = useStyles();
     const completedSize = todos.filter((todo) => todo.isCompleted).length;
 
+    const enabled = completedSize > 0;
+
     return (
         <div className={classes.todo_footer}>
             <span>{completedSize}/{todos.length} Completed</span>
-            <Button variant="outlined" color="secondary" href="#outlined-buttons" onClick={onClearCompleted}>Clear Completed</Button>
+            <Button disabled={!enabled}  color="secondary" href="#outlined-buttons" onClick={onClearCompleted}>Clear Completed</Button>
         </div>
     );
 }

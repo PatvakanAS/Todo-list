@@ -26,6 +26,12 @@ function App() {
             isCompleted: false,
           }
         ]);
+
+        function disabled() {
+          if(text !== ""){
+              alert("yesss")
+          }
+      }
       }} />
       <TodoList 
       todos={todos} 

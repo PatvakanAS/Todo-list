@@ -22,11 +22,17 @@ const useStyles = makeStyles((theme) => ({
 function TodoForm({ onAdd }) {
     const [text, setText] = useState("");
     const classes = useStyles();
+    const enabled = text.length > 0;
+   
+
     return (
         <form className={classes.from_add} onSubmit={(e) => {
             e.preventDefault();
-            onAdd(text);
-            setText("");
+            if(text.length > 0){
+                onAdd(text);
+                setText(""); 
+            }
+          
         }}>
             <TextField
                 className={classes.input_filled}
@@ -40,7 +46,7 @@ function TodoForm({ onAdd }) {
                     setText(e.target.value);
                 }}
             />
-            <Button variant="text" color="inherit" href="#outlined-buttons" onClick={(e) => {
+            <Button disabled={!enabled} variant="text" color="inherit" href="#outlined-buttons" onClick={(e) => {
                 onAdd(text);
                 setText("");
             }}>Add</Button >

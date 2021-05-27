@@ -27,15 +27,24 @@ body {
   padding: 20px;
   background: rgba(0,0,0,0.3);
 }
-
+.MuiInput-underline,
 .MuiInput-underline:before {
     color: #fff!important;
+    border-bottom: 1px solid #63A1C0;
 }
 
 .MuiInputBase-input {
   color: #fff!important;
+  font-weight: 200;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif!important;
+  font-size: 16px;
 }
 
 .MuiCheckbox-root {
   color: #3f51b5!important;
+}
+
+.MuiButton-root.Mui-disabled {
+  color: #3f51b5!important;
+  opacity: 0.3;
 }
